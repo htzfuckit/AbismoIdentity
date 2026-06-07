@@ -14,7 +14,6 @@ import com.htz.abismo.commands.SkinCommand;
 import com.htz.abismo.listeners.ChatListener;
 import com.htz.abismo.listeners.PlayerJoinListener;
 import com.htz.abismo.listeners.PlayerQuitListener;
-import com.htz.abismo.placeholders.AbismoPlaceholder;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AbismoIdentity extends JavaPlugin {
@@ -74,14 +73,24 @@ public class AbismoIdentity extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(identityService), this);
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(identityService), this);
 
-        // Register PlaceholderAPI expansion
-        if (getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
-            new AbismoPlaceholder(identityService).register();
-            getLogger().info("PlaceholderAPI expansion registered!");
-        }
+        // Try to register PlaceholderAPI expansion (optional)
+        tryRegisterPlaceholders();
 
         long duration = System.currentTimeMillis() - startTime;
         getLogger().info("AbismoIdentity enabled in " + duration + "ms!");
+    }
+
+    private void tryRegisterPlaceholders() {
+        try {
+            if (getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+                Class<?> placeholderClass = Class.forName("com.htz.abismo.placeholders.AbismoPlaceholder");
+                Object placeholder = placeholderClass.getConstructor(IdentityService.class).newInstance(identityService);
+                placeholderClass.getMethod("register").invoke(placeholder);
+                getLogger().info("PlaceholderAPI expansion registered!");
+            }
+        } catch (Exception e) {
+            getLogger().fine("PlaceholderAPI not available or failed to register expansion");
+        }
     }
 
     @Override
