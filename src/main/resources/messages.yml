@@ -1,0 +1,31 @@
+# AbismoIdentity Messages
+
+prefix: "§8[§bAbismo§8]§r"
+
+commands:
+  nick:
+    success: "{prefix} Seu nickname foi alterado para §b{nickname}§r!"
+    removed: "{prefix} Seu nickname foi removido!"
+    already-taken: "{prefix} O nickname §c{nickname}§r já está em uso!"
+    invalid-characters: "{prefix} O nickname contém caracteres inválidos!"
+    too-long: "{prefix} O nickname é muito longo! Máximo: {max-length} caracteres"
+    too-short: "{prefix} O nickname é muito curto! Mínimo: {min-length} caracteres"
+    reserved: "{prefix} O nickname §c{nickname}§r é reservado!"
+    no-nick: "{prefix} Você não possui um nickname!"
+    error: "{prefix} §cErro ao alterar nickname. Tente novamente!"
+
+  skin:
+    success: "{prefix} Sua skin foi alterada para §b{skin}§r!"
+    invalid-player: "{prefix} Jogador §c{player}§r não encontrado!"
+    error: "{prefix} §cErro ao alterar skin. Tente novamente!"
+
+  randomnick:
+    success: "{prefix} Seu nickname foi alterado para §b{nickname}§r!"
+    no-available: "{prefix} §cNenhum nickname disponível no pool!"
+    error: "{prefix} §cErro ao gerar nickname aleatório!"
+
+placeholders:
+  nick: "{nickname}"
+  real-name: "{real-name}"
+  skin: "{skin}"
+  is-nicked: "{is-nicked}"

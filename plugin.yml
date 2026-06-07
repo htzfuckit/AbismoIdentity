@@ -1,0 +1,29 @@
+name: AbismoIdentity
+version: 1.0.0
+main: com.htz.abismo.AbismoIdentity
+author: Htz
+description: Professional identity system for Paper Minecraft
+api-version: 1.21
+
+depend:
+  - PlaceholderAPI
+  - LuckPerms
+  - TAB
+
+softdepend:
+  - ProtocolLib
+
+commands:
+  nick:
+    description: Set your nickname
+    usage: /nick <name>
+    aliases: [nickname]
+  unnick:
+    description: Remove your nickname
+    usage: /unnick
+  randomnick:
+    description: Get a random nickname
+    usage: /randomnick
+  skin:
+    description: Change your skin
+    usage: /skin <player_name>

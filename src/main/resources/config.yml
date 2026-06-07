@@ -1,0 +1,41 @@
+# AbismoIdentity Configuration
+
+database:
+  path: "plugins/AbismoIdentity/data/identity.db"
+  connection-pool:
+    max-lifetime: 1800000
+    connection-timeout: 30000
+    idle-timeout: 600000
+    maximum-pool-size: 10
+    minimum-idle: 2
+
+nick:
+  max-length: 16
+  min-length: 3
+  reserved-words:
+    - "console"
+    - "server"
+    - "admin"
+    - "moderator"
+    - "owner"
+    - "system"
+  disallowed-characters: "[]{}()*!@#$%^&+=|;:',<>?/`~"
+
+skin:
+  cache-duration: 3600
+
+cache:
+  refresh-interval: 300
+
+chat:
+  prefix-format: "<prefix> <nickname>: <message>"
+  enable-adventure: true
+  enable-minimessage: true
+
+tab:
+  update-on-nick-change: true
+  update-display-name: true
+  update-nametag: true
+
+placeholderapi:
+  enabled: true
