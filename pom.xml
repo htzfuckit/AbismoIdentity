@@ -29,16 +29,12 @@
             <url>https://repo.lucko.me/</url>
         </repository>
         <repository>
-            <id>placeholderapi</id>
-            <url>https://repo.extendedclip.com/</url>
+            <id>codemc</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
         </repository>
         <repository>
-            <id>tab</id>
-            <url>https://repo.tarro.dev/repository/maven-releases/</url>
-        </repository>
-        <repository>
-            <id>protocollib</id>
-            <url>https://repo.dmulloy2.net/repository/public/</url>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
     </repositories>
 
